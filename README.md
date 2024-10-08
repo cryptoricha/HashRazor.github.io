@@ -3,4 +3,5 @@ Crypto Cheatsheet by CryptoRichA
 
 Click Here to Redirect The WebSite :
 https://cryptoricha.github.io/
+# cryptoricha.github.io
 https://HashRazor.github.io/
