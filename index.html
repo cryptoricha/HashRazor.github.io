@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f9;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .login-container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #333;
+        }
+
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        .loading {
+            margin-top: 15px;
+            display: none;
+            color: #555;
+        }
+
+        .error-message {
+            color: red;
+            margin-top: 10px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-container">
+        <h1>Login</h1>
+        <input type="text" id="username" placeholder="Username">
+        <input type="password" id="password" placeholder="Password">
+        <button id="login-btn">Login</button>
+        <p class="loading" id="loading">Loading...</p>
+        <p class="error-message" id="error-msg">Incorrect username or password!</p>
+    </div>
+
+    <script>
+        // Set correct username and password
+        const correctUsername = 'alok';
+        const correctPassword = 'singh';
+
+        // Get DOM elements
+        const loginBtn = document.getElementById('login-btn');
+        const usernameInput = document.getElementById('username');
+        const passwordInput = document.getElementById('password');
+        const loadingMessage = document.getElementById('loading');
+        const errorMessage = document.getElementById('error-msg');
+
+        // Login button click event
+        loginBtn.addEventListener('click', function () {
+            const username = usernameInput.value;
+            const password = passwordInput.value;
+
+            if (username === correctUsername && password === correctPassword) {
+                // Hide error message, show loading message
+                errorMessage.style.display = 'none';
+                loadingMessage.style.display = 'block';
+
+                // Simulate loading and redirect after 3 seconds
+                setTimeout(() => {
+                    window.location.href = "sucess.html"; // Redirect to success page (create this page separately)
+                }, 500);
+            } else {
+                // Show error message
+                errorMessage.style.display = 'block';
+                loadingMessage.style.display = 'none';
+            }
+        });
+    </script>
+
+</body>
+</html>
